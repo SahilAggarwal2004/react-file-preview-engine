@@ -1,0 +1,67 @@
+{
+  "name": "react-file-preview-engine",
+  "version": "0.0.1",
+  "description": "A renderer-driven React file preview engine with extensible architecture for images, video, audio, PDF, HTML, and custom formats.",
+  "license": "MIT",
+  "author": "Sahil Aggarwal <aggarwalsahil2004@gmail.com>",
+  "contributors": [],
+  "homepage": "https://github.com/SahilAggarwal2004/react-file-preview-engine#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SahilAggarwal2004/react-file-preview-engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SahilAggarwal2004/react-file-preview-engine/issues"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./types": "./dist/types.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pnpm i && pnpm run compile",
+    "compile": "tsup",
+    "dev": "tsup --watch"
+  },
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "mime": "^4.1.0",
+    "react-file-icon": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.10",
+    "@types/react-file-icon": "^1.0.4",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
+  "keywords": [
+    "arraybuffer",
+    "audio-preview",
+    "blob",
+    "component",
+    "custom-renderer",
+    "document-viewer",
+    "extensible",
+    "file",
+    "file-preview",
+    "file-viewer",
+    "image-preview",
+    "mime-type",
+    "pdf-viewer",
+    "preview",
+    "react",
+    "react-file-preview-engine",
+    "renderer",
+    "typescript",
+    "video-preview",
+    "viewer"
+  ]
+}
