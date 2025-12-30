@@ -1,11 +1,10 @@
-import Mime from "mime/lite";
 import React, { useMemo, useState } from "react";
 
 import { Loader } from "./components.js";
 import { defaults } from "./constants.js";
 import { useResolvedSrc } from "./hooks.js";
 import { fallbackRenderer, resolveRenderer } from "./lib/rendererRegistry.js";
-import { composeProps } from "./lib/utils.js";
+import { composeProps, getFileType } from "./lib/utils.js";
 import "./styles.css";
 import { FilePreviewerProps, RenderContext, State } from "./types.js";
 
@@ -26,7 +25,7 @@ export default function FilePreviewer<T extends object = {}>({
   onError,
 }: FilePreviewerProps<T>) {
   const resolvedSrc = useResolvedSrc(src);
-  const fileType = useMemo(() => mimeType ?? Mime.getType(fileName) ?? "", [mimeType, fileName]);
+  const fileType = useMemo(() => getFileType(mimeType, fileName), [mimeType, fileName]);
   const fileKey = `${resolvedSrc}|${fileType}|${fileName}`;
   const [state, setState] = useState<State>({ key: fileKey, status: "loading" });
 

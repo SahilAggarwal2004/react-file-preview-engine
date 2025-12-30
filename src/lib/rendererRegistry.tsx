@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { defaultStyles, FileIcon } from "react-file-icon";
 import { RenderContext, Renderer } from "../types.js";
-import { composeProps, fetchResource, getExtension } from "./utils.js";
+import { composeProps, fetchResource, getFileExtension } from "./utils.js";
 
 const audioRenderer: Renderer = {
   canRender: ({ mimeType }) => mimeType.startsWith("audio/"),
@@ -16,7 +16,7 @@ const audioRenderer: Renderer = {
 
 export const fallbackRenderer: Renderer = {
   Component({ mimeType, fileName, iconProps, onLoad }) {
-    const extension = useMemo(() => getExtension(mimeType, fileName), [mimeType, fileName]);
+    const extension = useMemo(() => getFileExtension(mimeType, fileName), [mimeType, fileName]);
 
     useEffect(() => {
       onLoad();
