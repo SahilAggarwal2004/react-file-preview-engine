@@ -309,4 +309,4 @@ type Renderer<T extends object = {}> = {
 
 ## Author
 
-[Sahil Aggarwal](https://www.github.com/SahilAggarwal2004)
+[Sahil Aggarwal](https://github.com/SahilAggarwal2004)
