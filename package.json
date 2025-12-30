@@ -1,6 +1,6 @@
 {
   "name": "react-file-preview-engine",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A renderer-driven React file preview engine with extensible architecture for images, video, audio, PDF, HTML, and custom formats.",
   "license": "MIT",
   "author": "Sahil Aggarwal <aggarwalsahil2004@gmail.com>",
@@ -27,6 +27,9 @@
     "compile": "tsup",
     "dev": "tsup --watch"
   },
+  "sideEffects": [
+    "**/*.css"
+  ],
   "types": "dist/index.d.ts",
   "dependencies": {
     "mime": "^4.1.0",
