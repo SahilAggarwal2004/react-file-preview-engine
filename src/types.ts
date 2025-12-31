@@ -43,7 +43,7 @@ export type FilePreviewerProps<T extends object> = {
   errorRenderer?: Renderer<T>;
   containerProps?: DivProps;
 } & MimeTypeSource &
-  RenderBehaviour;
+  Partial<RenderBehaviour>;
 
 export type FileSource = string | File | Blob | ArrayBuffer;
 
