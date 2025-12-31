@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.2](https://github.com/SahilAggarwal2004/react-file-preview-engine/compare/v0.1.1...v0.1.2) (2025-12-31)
+
+### Bug Fixes
+
+* Allow partial `RenderBehaviour` in `FilePreviewerProps`.  ([acea276](https://github.com/SahilAggarwal2004/react-file-preview-engine/commit/acea276c3a20337b9588aaf7cabfbd487bd65951))
+
 ## [0.1.1](https://github.com/SahilAggarwal2004/react-file-preview-engine/compare/v0.1.0...v0.1.1) (2025-12-30)
 
 ### Chores

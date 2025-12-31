@@ -1,6 +1,6 @@
 {
   "name": "react-file-preview-engine",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A renderer-driven React file preview engine with extensible architecture for images, video, audio, pdf, html, and custom formats.",
   "license": "MIT",
   "author": "Sahil Aggarwal <aggarwalsahil2004@gmail.com>",
