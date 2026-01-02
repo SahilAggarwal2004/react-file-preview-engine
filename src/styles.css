@@ -30,6 +30,11 @@
   height: 100%;
 }
 
+.rfpe-image,
+.rfpe-video {
+  object-fit: contain;
+}
+
 /* Text preview */
 .rfpe-text {
   width: 100%;
