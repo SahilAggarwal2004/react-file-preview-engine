@@ -6,11 +6,12 @@
     justify-content: center;
     height: 100%;
     max-width: 100lvw;
+    max-width: 100vw;
   }
 
   :where(.rfpe-icon) {
     width: 50px;
-    height: 50px;
+    aspect-ratio: 1;
   }
 }
 
@@ -51,8 +52,9 @@
 }
 
 .rfpe-loader-spinner {
+  box-sizing: border-box;
   width: 22px;
-  height: 22px;
+  aspect-ratio: 1;
   border-radius: 50%;
   border: 2px solid transparent;
   border-top-color: black;
