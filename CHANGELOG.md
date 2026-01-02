@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.5](https://github.com/SahilAggarwal2004/react-file-preview-engine/compare/v0.1.4...v0.1.5) (2026-01-02)
+
+### Styles
+
+* Remove unnecessary aspect-ratio from `rfpe-icon`.  ([dd7d790](https://github.com/SahilAggarwal2004/react-file-preview-engine/commit/dd7d7900aff02287f5d6ca2157ed53d36152146b))
+
 ## [0.1.4](https://github.com/SahilAggarwal2004/react-file-preview-engine/compare/v0.1.3...v0.1.4) (2026-01-02)
 
 ### Other
