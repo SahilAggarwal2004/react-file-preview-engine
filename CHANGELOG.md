@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.4](https://github.com/SahilAggarwal2004/react-file-preview-engine/compare/v0.1.3...v0.1.4) (2026-01-02)
+
+### Other
+
+* replace explicit heights with aspect-ratio for `rfpe-icon` and `rfpe-loader-spinner`, add max-width fallback.  ([c6e4c8d](https://github.com/SahilAggarwal2004/react-file-preview-engine/commit/c6e4c8d0d752d1353b491ac4c7357e7d5eb1c215))
+
 ## [0.1.3](https://github.com/SahilAggarwal2004/react-file-preview-engine/compare/v0.1.2...v0.1.3) (2026-01-02)
 
 ### Chores
