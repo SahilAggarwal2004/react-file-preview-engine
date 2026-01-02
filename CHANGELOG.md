@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.1.3](https://github.com/SahilAggarwal2004/react-file-preview-engine/compare/v0.1.2...v0.1.3) (2026-01-02)
+
+### Chores
+
+* Add `.env` file to .gitignore.  ([2a4bfa1](https://github.com/SahilAggarwal2004/react-file-preview-engine/commit/2a4bfa1de3571778343bebcd3ba2b8a1ef6c16ad))
+
+### Styles
+
+* Add `object-fit: contain` to `rfpe-image` and `rfpe-video`.  ([bba6f88](https://github.com/SahilAggarwal2004/react-file-preview-engine/commit/bba6f88f460109e9cb9f0a7a080453ebf8d81fd8))
+
+### Code Refactoring
+
+* Move `rfpe-container` and `rfpe-icon` to [@layer](https://github.com/layer) rfpe.  ([edf0024](https://github.com/SahilAggarwal2004/react-file-preview-engine/commit/edf0024d911234a25ab57e6c9f642fc286a3547e))
+
 ## [0.1.2](https://github.com/SahilAggarwal2004/react-file-preview-engine/compare/v0.1.1...v0.1.2) (2025-12-31)
 
 ### Bug Fixes
