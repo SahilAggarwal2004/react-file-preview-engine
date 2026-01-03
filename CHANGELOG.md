@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.7](https://github.com/SahilAggarwal2004/react-file-preview-engine/compare/v0.1.6...v0.1.7) (2026-01-03)
+
+### Code Refactoring
+
+* Explicitly type return values for public APIs.  ([8e881bf](https://github.com/SahilAggarwal2004/react-file-preview-engine/commit/8e881bf8655e867b04973b5893d040fcca98389c))
+
 ## [0.1.6](https://github.com/SahilAggarwal2004/react-file-preview-engine/compare/v0.1.5...v0.1.6) (2026-01-03)
 
 ### Documentation
