@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.6](https://github.com/SahilAggarwal2004/react-file-preview-engine/compare/v0.1.5...v0.1.6) (2026-01-03)
+
+### Documentation
+
+* Improve `customRenderers` and `additionalContext` documentation.  ([5e6b1b9](https://github.com/SahilAggarwal2004/react-file-preview-engine/commit/5e6b1b9025731f0ad9fbc7d534bdc41b57de048c))
+
 ## [0.1.5](https://github.com/SahilAggarwal2004/react-file-preview-engine/compare/v0.1.4...v0.1.5) (2026-01-02)
 
 ### Styles
