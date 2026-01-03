@@ -184,10 +184,63 @@ This means you can **override** built-in renderers by providing a custom rendere
 
 #### Markdown Renderer Example
 
-This example adds support for markdown files. By default, it renders markdown as html, but allows switching to raw text using `additionalContext`.
+This example adds support for markdown files.
 
 ```tsx
 import React, { useEffect, useState } from "react";
+import FilePreviewer from "react-file-preview-engine";
+import type { Renderer } from "react-file-preview-engine/types";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
+import { useRemark } from "react-remarkify";
+import rehypeSanitize from "rehype-sanitize";
+
+const markdownRenderer: Renderer = {
+  name: "markdown",
+  canRender({ mimeType }) {
+    return mimeType === "text/markdown";
+  },
+  Component({ src, onLoad, onError }) {
+    const [markdown, setMarkdown] = useState("");
+
+    useEffect(() => {
+      const controller = new AbortController();
+
+      fetch(src, { signal: controller.signal })
+        .then((res) => res.text())
+        .then((text) => {
+          setMarkdown(text);
+          onLoad();
+        })
+        .catch(onError);
+
+      return () => controller.abort();
+    }, [src]);
+
+    const reactContent = useRemark({
+      markdown,
+      remarkPlugins: [remarkGfm],
+      rehypePlugins: [rehypeRaw, rehypeSanitize],
+      remarkToRehypeOptions: { allowDangerousHtml: true },
+    });
+
+    return <div>{reactContent}</div>;
+  },
+};
+
+export default function App() {
+  return <FilePreviewer src="/README.md" fileName="README.md" customRenderers={[markdownRenderer]} />;
+}
+```
+
+#### Passing Additional Context
+
+You can extend renderers with custom configuration using `additionalContext`. This example enhances the markdown renderer to toggle between HTML and raw text rendering.
+
+> **Important:** `additionalContext` must remain stable across renders. Use `useMemo` for dynamic values or define it outside your component for static values.
+
+```tsx
+import React, { useEffect, useMemo, useState } from "react";
 import FilePreviewer from "react-file-preview-engine";
 import type { Renderer } from "react-file-preview-engine/types";
 import remarkGfm from "remark-gfm";
@@ -229,15 +282,15 @@ const markdownRenderer: Renderer<{ renderAsHtml?: boolean }> = {
 };
 
 export default function App() {
-  return <FilePreviewer src="/README.md" fileName="README.md" customRenderers={[markdownRenderer]} />;
-}
-```
+  const [renderAsHtml, setRenderAsHtml] = useState(true);
+  const additionalContext = useMemo(() => ({ renderAsHtml }), [renderAsHtml]); // Keep stable across renders
 
-#### Passing Additional Context
-
-```tsx
-export default function App() {
-  return <FilePreviewer src="/README.md" fileName="README.md" customRenderers={[markdownRenderer]} additionalContext={{ renderAsHtml: false }} />;
+  return (
+    <>
+      <button onClick={() => setRenderAsHtml(!renderAsHtml)}>Toggle {renderAsHtml ? "Raw" : "HTML"}</button>
+      <FilePreviewer src="/README.md" fileName="README.md" customRenderers={[markdownRenderer]} additionalContext={additionalContext} />
+    </>
+  );
 }
 ```
 
@@ -251,20 +304,20 @@ You can explore the actual renderer definitions in the [`defaultRenderers` const
 
 ### FilePreviewer Props
 
-| Prop                | Type                            | Required | Default                                                                                                                     | Description                                             |
-| ------------------- | ------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| `src`               | [`FileSource`](#filesource)     | Yes      | –                                                                                                                           | Source URL of the file to preview                       |
-| `mimeType`          | `string`                        | No       | inferred                                                                                                                    | MIME type of the file                                   |
-| `fileName`          | `string`                        | No       | -                                                                                                                           | Used for MIME inference and accessibility               |
-| `autoPlay`          | `boolean`                       | No       | `false`                                                                                                                     | Auto play audio and video                               |
-| `loader`            | `ReactNode`                     | No       | [`<Loader />`](https://github.com/SahilAggarwal2004/react-file-preview-engine/blob/main/src/components.tsx)                 | Shown while the file is loading                         |
-| `customRenderers`   | [`Renderer[]`](#renderer)       | No       | -                                                                                                                           | Additional or overriding renderers                      |
-| `additionalContext` | `object`                        | No       | -                                                                                                                           | Extra data passed to renderers, including errorRenderer |
-| `errorRenderer`     | [`Renderer`](#renderer)         | No       | [`fallbackRenderer`](https://github.com/SahilAggarwal2004/react-file-preview-engine/blob/main/src/lib/rendererRegistry.tsx) | Renderer used on error                                  |
-| `containerProps`    | [`DivProps`](#divprops)         | No       | -                                                                                                                           | Props applied to preview container                      |
-| `iconProps`         | [`DivProps`](#divprops)         | No       | -                                                                                                                           | Props applied to fallback icon                          |
-| `onLoad`            | [`Eventhandler`](#eventhandler) | No       | –                                                                                                                           | Called when preview is ready                            |
-| `onError`           | [`Eventhandler`](#eventhandler) | No       | –                                                                                                                           | Called when preview fails                               |
+| Prop                | Type                            | Required | Default                                                                                                                     | Description                                                           |
+| ------------------- | ------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `src`               | [`FileSource`](#filesource)     | Yes      | –                                                                                                                           | Source URL of the file to preview                                     |
+| `mimeType`          | `string`                        | No       | inferred                                                                                                                    | MIME type of the file                                                 |
+| `fileName`          | `string`                        | No       | -                                                                                                                           | Used for MIME inference and accessibility                             |
+| `autoPlay`          | `boolean`                       | No       | `false`                                                                                                                     | Auto play audio and video                                             |
+| `loader`            | `ReactNode`                     | No       | [`<Loader />`](https://github.com/SahilAggarwal2004/react-file-preview-engine/blob/main/src/components.tsx)                 | Shown while the file is loading                                       |
+| `customRenderers`   | [`Renderer[]`](#renderer)       | No       | -                                                                                                                           | Additional or overriding renderers                                    |
+| `additionalContext` | `object`                        | No       | -                                                                                                                           | Extra data passed to the renderers. Must remain stable across renders |
+| `errorRenderer`     | [`Renderer`](#renderer)         | No       | [`fallbackRenderer`](https://github.com/SahilAggarwal2004/react-file-preview-engine/blob/main/src/lib/rendererRegistry.tsx) | Renderer used on error                                                |
+| `containerProps`    | [`DivProps`](#divprops)         | No       | -                                                                                                                           | Props applied to preview container                                    |
+| `iconProps`         | [`DivProps`](#divprops)         | No       | -                                                                                                                           | Props applied to fallback icon                                        |
+| `onLoad`            | [`Eventhandler`](#eventhandler) | No       | –                                                                                                                           | Called when preview is ready                                          |
+| `onError`           | [`Eventhandler`](#eventhandler) | No       | –                                                                                                                           | Called when preview fails                                             |
 
 ## Types
 
