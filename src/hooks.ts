@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef } from "react";
 
-export function useResolvedSrc(src: string | File | Blob | ArrayBuffer) {
+export function useResolvedSrc(src: string | File | Blob | ArrayBuffer): string {
   const objectUrlRef = useRef<string | null>(null);
 
   const revokeObjectURL = () => {

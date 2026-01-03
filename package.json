@@ -14,13 +14,17 @@
     "url": "https://github.com/SahilAggarwal2004/react-file-preview-engine/issues"
   },
   "type": "module",
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": "./dist/index.js",
     "./types": "./dist/types.js"
   },
   "main": "dist/index.js",
-  "files": [
-    "dist"
+  "types": "dist/index.d.ts",
+  "sideEffects": [
+    "**/*.css"
   ],
   "scripts": {
     "build": "pnpm i && pnpm run compile",
@@ -29,10 +33,6 @@
     "dry-release": "release-it --ci --dry-run",
     "release": "release-it --ci"
   },
-  "sideEffects": [
-    "**/*.css"
-  ],
-  "types": "dist/index.d.ts",
   "dependencies": {
     "mime": "^4.1.0",
     "react-file-icon": "^1.6.0"

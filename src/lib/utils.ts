@@ -24,6 +24,7 @@ export async function fetchResource(src: string, type: FetchType, signal?: Abort
   return res[type]();
 }
 
-export const getFileExtension = (mimeType: string, fileName?: string) => (Mime.getExtension(mimeType) || fileName?.match(fileExtensionRegex)?.[1] || "") as DefaultExtensionType;
+export const getFileExtension = (mimeType: string, fileName?: string): DefaultExtensionType =>
+  (Mime.getExtension(mimeType) || fileName?.match(fileExtensionRegex)?.[1] || "") as DefaultExtensionType;
 
-export const getFileType = (mimeType?: string, fileName?: string) => mimeType || (fileName && Mime.getType(fileName)) || "";
+export const getFileType = (mimeType?: string, fileName?: string): string => mimeType || (fileName && Mime.getType(fileName)) || "";
