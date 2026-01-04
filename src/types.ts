@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, HTMLAttributes, JSX, ReactNode } from "react";
+import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
 
 // components/loader.tsx
 export type LoaderProps = {
@@ -26,7 +26,7 @@ export type RenderContext<T extends object = {}> = {
 export type Renderer<T extends object = {}> = {
   name?: string;
   canRender?(ctx: RenderContext<T>): boolean;
-  Component(ctx: RenderContext<T>): JSX.Element;
+  Component(ctx: RenderContext<T>): ReactNode;
 };
 
 // lib/utils.ts

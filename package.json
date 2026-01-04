@@ -14,40 +14,43 @@
     "url": "https://github.com/SahilAggarwal2004/react-file-preview-engine/issues"
   },
   "type": "module",
-  "files": [
-    "dist"
-  ],
   "exports": {
     ".": "./dist/index.js",
     "./types": "./dist/types.js"
   },
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "sideEffects": [
-    "**/*.css"
+  "files": [
+    "dist"
   ],
   "scripts": {
     "build": "pnpm i && pnpm run compile",
     "compile": "tsup",
     "dev": "tsup --watch",
     "dry-release": "release-it --ci --dry-run",
+    "prettier": "prettier-package-json --write package.json",
+    "pub": "pnpm login && pnpm publish",
     "release": "release-it --ci"
   },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "types": "dist/index.d.ts",
   "dependencies": {
     "mime": "^4.1.0",
     "react-file-icon": "^1.6.0"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^10.0.4",
     "@types/react": "^19.2.7",
     "@types/react-file-icon": "^1.0.4",
+    "prettier-package-json": "^2.8.0",
     "release-it": "^19.2.2",
     "tsup": "^8.5.1",
     "typescript": "^5.9.3"
-  },
-  "peerDependencies": {
-    "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
   },
   "keywords": [
     "arraybuffer",

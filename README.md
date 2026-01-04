@@ -302,7 +302,9 @@ You can explore the actual renderer definitions in the [`defaultRenderers` const
 
 ## API Reference
 
-### FilePreviewer Props
+### FilePreviewer Component
+
+Here is the full API for the `<FilePreviewer>` component, these properties can be set on an instance of FilePreviewer:
 
 | Prop                | Type                            | Required | Default                                                                                                                     | Description                                                           |
 | ------------------- | ------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
@@ -324,7 +326,7 @@ You can explore the actual renderer definitions in the [`defaultRenderers` const
 ### DivProps
 
 ```typescript
-import { DetailedHTMLProps, HTMLAttributes } from "react";
+import type { DetailedHTMLProps, HTMLAttributes } from "react";
 
 type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 ```
@@ -360,6 +362,6 @@ type Renderer<T extends object = {}> = {
 };
 ```
 
-## Author
+## License
 
-[Sahil Aggarwal](https://github.com/SahilAggarwal2004)
+This project is licensed under the [MIT License](LICENSE).

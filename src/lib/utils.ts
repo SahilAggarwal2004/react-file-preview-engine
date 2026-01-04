@@ -1,7 +1,8 @@
 import Mime from "mime/lite";
 import { DefaultExtensionType } from "react-file-icon";
+
 import { fileExtensionRegex } from "../constants.js";
-import { DivProps, FetchType } from "../types.js";
+import type { DivProps, FetchType } from "../types.js";
 
 const composeClass = (baseClass: string, props?: DivProps) => `${baseClass}${props?.className ? " " + props.className : ""}`;
 

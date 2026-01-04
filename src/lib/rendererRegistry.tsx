@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { defaultStyles, FileIcon } from "react-file-icon";
-import { RenderContext, Renderer } from "../types.js";
+
+import type { RenderContext, Renderer } from "../types.js";
 import { composeProps, fetchResource, getFileExtension } from "./utils.js";
 
 const audioRenderer: Renderer = {
