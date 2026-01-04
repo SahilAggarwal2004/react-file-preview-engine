@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.8](https://github.com/SahilAggarwal2004/react-file-preview-engine/compare/v0.1.7...v0.1.8) (2026-01-04)
+
+### Code Refactoring
+
+* Modularize `index.tsx`.  ([9f9d919](https://github.com/SahilAggarwal2004/react-file-preview-engine/commit/9f9d919e6d7d5628cb0a9bb94fdaa94babf476c6))
+
 ## [0.1.7](https://github.com/SahilAggarwal2004/react-file-preview-engine/compare/v0.1.6...v0.1.7) (2026-01-03)
 
 ### Code Refactoring
