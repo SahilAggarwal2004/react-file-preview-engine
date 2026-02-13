@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.9](https://github.com/SahilAggarwal2004/react-file-preview-engine/compare/v0.1.8...v0.1.9) (2026-02-13)
+
+### Chores
+
+* **deps:** Update @release-it/conventional-changelog, @types/react and release-it.  ([4b480b7](https://github.com/SahilAggarwal2004/react-file-preview-engine/commit/4b480b7dea2a618fea7477bd6cde4a9b2b1291f4))
+* Rename `index.tsx` to `index.ts`.  ([f568fbb](https://github.com/SahilAggarwal2004/react-file-preview-engine/commit/f568fbb74e13f942b8b223d30363bf291ea119d7))
+
 ## [0.1.8](https://github.com/SahilAggarwal2004/react-file-preview-engine/compare/v0.1.7...v0.1.8) (2026-01-04)
 
 ### Code Refactoring
