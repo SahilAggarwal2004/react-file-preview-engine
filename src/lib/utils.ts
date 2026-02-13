@@ -1,5 +1,5 @@
 import Mime from "mime/lite";
-import { DefaultExtensionType } from "react-file-icon";
+import type { DefaultExtensionType } from "react-file-icon";
 
 import { fileExtensionRegex } from "../constants.js";
 import type { DivProps, FetchType } from "../types.js";
