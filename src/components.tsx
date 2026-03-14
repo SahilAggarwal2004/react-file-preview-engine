@@ -1,11 +1,11 @@
 import React, { useMemo, useState } from "react";
 
-import { defaults } from "./constants.js";
-import { useResolvedSrc } from "./hooks.js";
-import { fallbackRenderer, resolveRenderer } from "./lib/rendererRegistry.js";
-import { composeProps, getFileType } from "./lib/utils.js";
-import "./styles.css";
-import type { FilePreviewerProps, LoaderProps, RenderContext, State } from "./types.js";
+import { defaults } from "./constants";
+import { useResolvedSrc } from "./hooks";
+import { fallbackRenderer, resolveRenderer } from "./lib/rendererRegistry";
+import { composeProps, getFileType } from "./lib/utils";
+import "./style.css";
+import type { FilePreviewerProps, LoaderProps, RenderContext, State } from "./types";
 
 const { additionalContext: defaultContext, customRenderers: defaultRenderers, props: defaultProps } = defaults;
 
