@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.0](https://github.com/SahilAggarwal2004/react-file-preview-engine/compare/v0.1.10...v1.0.0) (2026-03-14)
+
+### ⚠ BREAKING CHANGES
+
+* Remove automatic CSS injection and require manual stylesheet import
+
+### Code Refactoring
+
+* Remove automatic CSS injection and require manual stylesheet import.  ([54537e4](https://github.com/SahilAggarwal2004/react-file-preview-engine/commit/54537e40f4cd431b2a6ff8ce35aa00cb48cf3814))
+
 ## [0.1.10](https://github.com/SahilAggarwal2004/react-file-preview-engine/compare/v0.1.9...v0.1.10) (2026-03-14)
 
 ### Build System
