@@ -50,6 +50,7 @@ This is the minimal setup. The previewer automatically infers the MIME type from
 ```tsx
 import React from "react";
 import FilePreviewer from "react-file-preview-engine";
+import "react-file-preview-engine/style.css";
 
 export default function App() {
   return <FilePreviewer src="https://example.com/sample.pdf" fileName="sample.pdf" />;
@@ -63,6 +64,7 @@ You can preview files selected by the user without uploading them first. The eng
 ```tsx
 import React, { useState } from "react";
 import FilePreviewer from "react-file-preview-engine";
+import "react-file-preview-engine/style.css";
 
 export default function App() {
   const [file, setFile] = useState<File>();
@@ -83,6 +85,7 @@ If you already know the MIME type, you can pass it directly. This ensures the en
 ```tsx
 import React from "react";
 import FilePreviewer from "react-file-preview-engine";
+import "react-file-preview-engine/style.css";
 
 export default function App() {
   return <FilePreviewer src={new Blob(["Hello world"], { type: "text/plain" })} mimeType="text/plain" fileName="hello.txt" />;
@@ -96,6 +99,7 @@ You can listen to lifecycle events triggered by the active renderer.
 ```tsx
 import React from "react";
 import FilePreviewer from "react-file-preview-engine";
+import "react-file-preview-engine/style.css";
 
 export default function App() {
   return (
@@ -120,6 +124,7 @@ For audio and video files, you can enable auto play.
 ```tsx
 import React from "react";
 import FilePreviewer from "react-file-preview-engine";
+import "react-file-preview-engine/style.css";
 
 export default function App() {
   return <FilePreviewer src="https://example.com/video.mp4" fileName="video.mp4" autoPlay={true} />;
@@ -133,6 +138,7 @@ You can customize the loader, container props, and icon props without modifying 
 ```tsx
 import React from "react";
 import FilePreviewer from "react-file-preview-engine";
+import "react-file-preview-engine/style.css";
 
 export default function App() {
   return (
@@ -154,6 +160,7 @@ When a renderer reports an error, the previewer switches to `errorRenderer`.
 ```tsx
 import React from "react";
 import FilePreviewer from "react-file-preview-engine";
+import "react-file-preview-engine/style.css";
 
 const errorRenderer = {
   Component() {
@@ -189,6 +196,7 @@ This example adds support for markdown files.
 ```tsx
 import React, { useEffect, useState } from "react";
 import FilePreviewer from "react-file-preview-engine";
+import "react-file-preview-engine/style.css";
 import type { Renderer } from "react-file-preview-engine/types";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
@@ -242,6 +250,7 @@ You can extend renderers with custom configuration using `additionalContext`. Th
 ```tsx
 import React, { useEffect, useMemo, useState } from "react";
 import FilePreviewer from "react-file-preview-engine";
+import "react-file-preview-engine/style.css";
 import type { Renderer } from "react-file-preview-engine/types";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
