@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.10](https://github.com/SahilAggarwal2004/react-file-preview-engine/compare/v0.1.9...v0.1.10) (2026-03-14)
+
+### Build System
+
+* Migrate from tsup to tsdown for library bundling.  ([a2c9eaa](https://github.com/SahilAggarwal2004/react-file-preview-engine/commit/a2c9eaa40370a51ede2f7ffaf05d737a75ae97b7))
+
 ## [0.1.9](https://github.com/SahilAggarwal2004/react-file-preview-engine/compare/v0.1.8...v0.1.9) (2026-02-13)
 
 ### Chores
