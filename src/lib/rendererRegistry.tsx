@@ -1,8 +1,7 @@
+import { composeProps, fetchResource, getFileExtension } from "@/lib/utils";
+import type { RenderContext, Renderer } from "@/types";
 import React, { useEffect, useMemo, useState } from "react";
 import { defaultStyles, FileIcon } from "react-file-icon";
-
-import type { RenderContext, Renderer } from "../types";
-import { composeProps, fetchResource, getFileExtension } from "./utils";
 
 const audioRenderer: Renderer = {
   canRender: ({ mimeType }) => mimeType.startsWith("audio/"),
