@@ -48,7 +48,7 @@
     "@release-it/conventional-changelog": "^10.0.6",
     "@tsdown/css": "^0.21.7",
     "@types/react": "^19.2.14",
-    "@types/react-file-icon": "^1.0.4",
+    "@types/react-file-icon": "^1.0.5",
     "prettier-package-json": "^2.8.0",
     "release-it": "^19.2.4",
     "tsdown": "^0.21.7",
