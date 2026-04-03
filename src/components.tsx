@@ -2,9 +2,9 @@ import { defaults } from "@/constants";
 import { useResolvedSrc } from "@/hooks";
 import { fallbackRenderer, resolveRenderer } from "@/lib/rendererRegistry";
 import { composeProps, getFileType } from "@/lib/utils";
-import React, { useMemo, useState } from "react";
-import "@/style.css";
+import styles from "@/style.module.css";
 import type { FilePreviewerProps, LoaderProps, RenderContext, State } from "@/types";
+import React, { useMemo, useState } from "react";
 
 const { additionalContext: defaultContext, customRenderers: defaultRenderers, props: defaultProps } = defaults;
 
@@ -66,7 +66,7 @@ export default function FilePreviewer<T extends object = {}>({
     <>
       {isLoading && loader}
       <div
-        {...composeProps("rfpe-container", containerProps, {
+        {...composeProps(styles["container"], containerProps, {
           style: { visibility: isLoading ? "hidden" : "visible" },
         })}
       >
@@ -78,9 +78,9 @@ export default function FilePreviewer<T extends object = {}>({
 
 function Loader({ children, text }: LoaderProps) {
   return (
-    <div className="rfpe-loader">
-      <div className="rfpe-loader-spinner" />
-      {children ?? <div className="rfpe-loader-text">{text}</div>}
+    <div className={styles["loader"]}>
+      <div className={styles["loader-spinner"]} />
+      {children ?? <div className={styles["loader-text"]}>{text}</div>}
     </div>
   );
 }

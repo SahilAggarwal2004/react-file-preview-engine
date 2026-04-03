@@ -1,4 +1,5 @@
 import { composeProps, fetchResource, getFileExtension } from "@/lib/utils";
+import styles from "@/style.module.css";
 import type { RenderContext, Renderer } from "@/types";
 import React, { useEffect, useMemo, useState } from "react";
 import { defaultStyles, FileIcon } from "react-file-icon";
@@ -7,7 +8,7 @@ const audioRenderer: Renderer = {
   canRender: ({ mimeType }) => mimeType.startsWith("audio/"),
   Component({ src, mimeType, fileName, autoPlay, onLoad, onError }) {
     return (
-      <audio className="rfpe-audio" controls autoPlay={autoPlay} onCanPlay={onLoad} onError={onError} aria-label={fileName || "Audio preview"}>
+      <audio className={styles["audio"]} controls autoPlay={autoPlay} onCanPlay={onLoad} onError={onError} aria-label={fileName || "Audio preview"}>
         <source src={src} type={mimeType} />
       </audio>
     );
@@ -23,7 +24,7 @@ export const fallbackRenderer: Renderer = {
     }, []);
 
     return (
-      <div {...composeProps("rfpe-icon", iconProps)}>
+      <div {...composeProps(styles["icon"], iconProps)}>
         <FileIcon extension={extension} {...defaultStyles[extension]} />
       </div>
     );
@@ -48,14 +49,14 @@ const htmlRenderer: Renderer = {
       return () => controller.abort();
     }, [src]);
 
-    return <iframe className="rfpe-iframe" src={`data:text/html; charset=utf-8,${encodeURIComponent(data)}`} sandbox="" />;
+    return <iframe className={styles["iframe"]} src={`data:text/html; charset=utf-8,${encodeURIComponent(data)}`} sandbox="" />;
   },
 };
 
 const imageRenderer: Renderer = {
   canRender: ({ mimeType }) => mimeType.startsWith("image/"),
   Component({ src, fileName, onLoad, onError }) {
-    return <img className="rfpe-image" src={src} alt={fileName || "Image preview"} onLoad={onLoad} onError={onError} />;
+    return <img className={styles["image"]} src={src} alt={fileName || "Image preview"} onLoad={onLoad} onError={onError} />;
   },
 };
 
@@ -83,7 +84,7 @@ const pdfRenderer: Renderer = {
       };
     }, [src]);
 
-    return <iframe className="rfpe-iframe" src={data} />;
+    return <iframe className={styles["iframe"]} src={data} />;
   },
 };
 
@@ -105,7 +106,7 @@ const textRenderer: Renderer = {
       return () => controller.abort();
     }, [src]);
 
-    return <div className="rfpe-text">{data}</div>;
+    return <div className={styles["text"]}>{data}</div>;
   },
 };
 
@@ -113,7 +114,7 @@ const videoRenderer: Renderer = {
   canRender: ({ mimeType }) => mimeType.startsWith("video/"),
   Component({ src, mimeType, fileName, autoPlay, onLoad, onError }) {
     return (
-      <video className="rfpe-video" controls autoPlay={autoPlay} onCanPlay={onLoad} onError={onError} aria-label={fileName || "Video preview"}>
+      <video className={styles["video"]} controls autoPlay={autoPlay} onCanPlay={onLoad} onError={onError} aria-label={fileName || "Video preview"}>
         <source src={src} type={mimeType} />
       </video>
     );
