@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.1.0](https://github.com/SahilAggarwal2004/react-file-preview-engine/compare/v1.0.0...v1.1.0) (2026-04-03)
+
+### Chores
+
+* **deps:** Update @types/react-file-icon.  ([df9eb95](https://github.com/SahilAggarwal2004/react-file-preview-engine/commit/df9eb95a16391ff9d03b21aab0ebed5ff69a0864))
+
+### Features
+
+* Add @ianvs/prettier-plugin-sort-imports and @tsdown/css.  ([2dab63e](https://github.com/SahilAggarwal2004/react-file-preview-engine/commit/2dab63e47b8b0d7dd9fbafed6a0a3df2ea99eda9))
+
+### Code Refactoring
+
+* Use CSS Modules for safer class name usage.  ([8ed25d1](https://github.com/SahilAggarwal2004/react-file-preview-engine/commit/8ed25d16d374fe3470e79a65f8d2759fedf7322d))
+
 ## [1.0.0](https://github.com/SahilAggarwal2004/react-file-preview-engine/compare/v0.1.10...v1.0.0) (2026-03-14)
 
 ### ⚠ BREAKING CHANGES
